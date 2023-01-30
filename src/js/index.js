@@ -6,7 +6,13 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+import Counter from "./component/SimpleCounter.jsx";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+
+var counter = 0
+setInterval(() => {
+    ReactDOM.render(<Counter number={counter}/>, document.querySelector("#app"))
+    counter++
+}, 1000);
+
+ReactDOM.render(<Counter number={counter}/>, document.querySelector("#app"));
